@@ -77,7 +77,7 @@ const Login = () => {
     isDisplayText === true ? setIsDisplayText(false) : setIsDisplayText(true);
   };
   return (
-    <section className=" login_section lg:py-20 py-14 bg-nudeBlue ">
+    <section className=" login_section lg:py-20 py-14 bg-light ">
       <div className="container mx-auto lg:max-w-7xl md:px-10 px-6">
         <div className=" form_wrapper bg-white px-10 py-10 w-full mx-auto lg:max-w-lg rounded">
           <h2 className="text-3xl font-semibold text-dark mt-5 mb-10 text-center">
@@ -155,12 +155,14 @@ const Login = () => {
               )}
             </div>
 
-            <button
-              className="bg-firstCol text-white hover:bg-secondCol py-2 rounded-lg text-lg"
+           <div className="flex items-center justify-center">
+           <button
+              className="w-[fit-content] text-white py-2 px-20 rounded-md text-lg  bg-primaryCol hover:bg-secondaryCol block"
               type="submit"
             >
-              Login
+             Login
             </button>
+           </div>
           </form>
           <div className="flex justify-between items-center py-6">
             <span className="text-normal text-dark font-normal ">
@@ -174,8 +176,8 @@ const Login = () => {
             </span>
           </div>
 
-          <div className="divider">OR</div>
-          <div className="text-center">
+         
+          {/* <div className="text-center">
             <button
               type="button"
               className="text-white bg-lightBlue hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-14 py-3 mt-6 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
@@ -190,7 +192,7 @@ const Login = () => {
                 </span>
               </div>
             </button>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

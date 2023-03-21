@@ -9,7 +9,7 @@ import Login from "../pages/login/Login";
 
 import SignUp from "../pages/signUp/SignUp";
 import Main from '../layout/Main';
-
+import ProfilePage from '../pages/profilePage/ProfilePage';
 import NotFound from "../pages/notFound/NotFound";
 import PrivateRoute from "./PrivateRoute";
 import DisplayError from "../components/displayError/DisplayError";
@@ -22,7 +22,7 @@ export const router = createBrowserRouter(
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signUp" element={<SignUp />} />
-        
+        <Route path="/profile" element={<ProfilePage />} />
         <Route path="/login" element={<Login />} />
       </Route>
       {/* admin dashboard route */}

@@ -10,7 +10,8 @@ import {
   signInWithPopup,
   GoogleAuthProvider,
 } from "firebase/auth";
-import app from "../firebase/firebase.config";
+//import app from "../firebase/firebase.config";
+import app from '../firebase/firebase.config';
 
 const AuthContext = createContext(app);
 

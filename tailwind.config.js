@@ -27,19 +27,9 @@ module.exports = {
     ,
 
     colors: {
-      firstCol: "#DA3C3C",
-      secondCol: "#C13030",
-      rose: "#fb7185",
-      darkSlate: "#1e293b",
-      lightSlate: "#334155",
-      gray: "#f9f9f9",
-      white: "#fff",
-      darkBlack: "#000",
-      darkGray: "#B3B3B3",
-      lightGray: "#F0F2F5",
-      lightBlue: "#508AEF",
-      nudeBlue: "#ECF5FF",
-      deepBlue: "#000060"
+     primaryCol:"#ff9f1a",
+     secondaryCol:"#ffaf40",
+     light:"#f9f9f9"
 
     },
   },

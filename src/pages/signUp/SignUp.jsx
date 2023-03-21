@@ -4,12 +4,13 @@ import { Link, useNavigate } from "react-router-dom";
 import "./SignUp.css";
 import { AuthState } from "../../context/AuthProvider";
 import { useForm } from "react-hook-form";
-import useToken from "../../hooks/useToken";
+
 import { RiEyeCloseLine } from "react-icons/ri";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
-import { toast } from "react-toastify";
+import "./SignUp.css";
 
-const RiderSignUp = () => {
+
+const SignUp = () => {
   const {
     register,
     formState: { errors },
@@ -25,9 +26,6 @@ const RiderSignUp = () => {
   const [value, setValue] = useState("");
 
   // setUserTypeVal(value);
-  //destructure token from use usetoken
-
-  const [token] = useToken(createdUserEmail);
 
   //get form registered from react form hook
 
@@ -521,4 +519,4 @@ const RiderSignUp = () => {
   );
 };
 
-export default RiderSignUp;
+export default SignUp;

@@ -3,102 +3,45 @@ import {
   createRoutesFromElements,
   Route,
 } from "react-router-dom";
+import DashboardLaout from "../pages/dashboardLayout/DashboardLaout";
+import Home from "../pages/home/Home";
 import Login from "../pages/login/Login";
-import LearnerSignUp from "../pages/signUp/LearnerSignUp";
-import RiderSignUp from "../pages/signUp/RiderSignUp";
 
-import SignUp from "../pages/signUp/RiderSignUp";
+import SignUp from "../pages/signUp/SignUp";
+import Main from '../layout/Main';
+
+import NotFound from "../pages/notFound/NotFound";
+import PrivateRoute from "./PrivateRoute";
+import DisplayError from "../components/displayError/DisplayError";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
     <>
-      <Route path="/" element={<Home />}>
+      <Route path="/" element={<Main/>}>
+
+        <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/riderSignUp" element={<RiderSignUp />} />
-        <Route path="/learnerSignUp" element={<LearnerSignUp />} />
+        <Route path="/signUp" element={<SignUp />} />
+        
         <Route path="/login" element={<Login />} />
       </Route>
       {/* admin dashboard route */}
       <Route
         path="/dashboard"
         element={
-          <PrivateRoute>
-            <DashboardLayout />
-          </PrivateRoute>
+          <DashboardLaout />
         }
-        errorElement={<DislayError />}
+        errorElement={<DisplayError />}
       >
         <Route
           path="/dashboard"
           element={
             <PrivateRoute>
-              <Overview />
+             
             </PrivateRoute>
           }
         />
 
-        <Route
-          path="/dashboard/myOrders"
-          element={
-            <BuyerRoute>
-              <MyOrder />
-            </BuyerRoute>
-          }
-        />
-        <Route
-          path="/dashboard/payment/:id"
-          element={
-            <PrivateRoute>
-              <Payment />
-            </PrivateRoute>
-          }
-          loader={paymentLoader}
-        ></Route>
-
-        <Route
-          path="/dashboard/addProducts"
-          element={
-            <SellerRoute>
-              <AddProduct />
-            </SellerRoute>
-          }
-        />
-
-        <Route
-          path="/dashboard/myProducts"
-          element={
-            <SellerRoute>
-              <MyProduct />
-            </SellerRoute>
-          }
-        />
-
-        <Route
-          path="/dashboard/allSellers"
-          element={
-            <AdminRoute>
-              <AllSellers />
-            </AdminRoute>
-          }
-        />
-
-        <Route
-          path="/dashboard/allBuyers"
-          element={
-            <AdminRoute>
-              <AllBuyers />
-            </AdminRoute>
-          }
-        />
-
-        <Route
-          path="/dashboard/reportedProducts"
-          element={
-            <AdminRoute>
-              <ReportedProducts />
-            </AdminRoute>
-          }
-        />
         <Route path="*" element={<NotFound />} />
       </Route>
     </>

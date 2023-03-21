@@ -1,13 +1,11 @@
 import React, { useState } from "react";
-
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AiOutlineGoogle } from "react-icons/ai";
 import { AuthState } from "../../context/AuthProvider";
 import { useForm } from "react-hook-form";
-import useToken from "../../hooks/useToken";
 import { RiEyeCloseLine } from "react-icons/ri";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
-import { toast } from "react-toastify";
+
 
 const Login = () => {
   const {
@@ -22,7 +20,7 @@ const Login = () => {
   //handlw jwt user authorization
   const [loginUserEmail, setLoginUserEmail] = useState("");
 
-  const [token] = useToken(loginUserEmail);
+ 
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -31,12 +29,6 @@ const Login = () => {
   //error handling while login
   const [error, setError] = useState("");
 
-  if (token) {
-    console.log(token);
-
-    navigate(from, { replace: true });
-  }
-  //submit the form
 
   //react toastify
 
@@ -47,11 +39,11 @@ const Login = () => {
         const user = res.user;
         console.log(data.password);
         console.log(user);
-        toast.success(`Wow!!! User logged in successfully`, {
-          position: toast.POSITION.TOP_CENTER,
+        // toast.success(`Wow!!! User logged in successfully`, {
+        //   position: toast.POSITION.TOP_CENTER,
 
-          autoClose: 1000,
-        });
+        //   autoClose: 1000,
+        // });
 
         setLoginUserEmail(data.email);
       })
